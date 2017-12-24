@@ -24,7 +24,6 @@ for file in files:
 start_time = time.time() 
 frame_time = time.time()
 obstacle_height = 0
-last_state_crouched = False
 should_crouch = False
 
 while(True):
