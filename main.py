@@ -15,19 +15,18 @@ import time
 dino = cv2.imread('dino.jpg', 0)
 w_dino, h_dino = dino.shape[::-1]
 
-files = glob.glob ('cacti/*. jpg')   
+files = glob.glob ('cacti/*.jpg')   
 cacti = []       
 for file in files:
     temp=cv2.imread(file, 0)  
     cacti.append(temp)
 
 start_time = time.time() 
-
+obstacle_height = 0
 
 while(True):
     leftest = 1000
-    jump_dist = 190 + (time.time() - start_time)/2
-    obstacle_height = 0
+    jump_dist = 170  + (time.time() - start_time) *1.82   
     pts = []
     scr = grab_screen(region=(75,250, 750, 450))
    # scr = cv2.cvtColor(scr, cv2.COLOR_BGR2RGB)
@@ -57,8 +56,9 @@ while(True):
         cv2.putText(scr, 'Jump!', (0, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0),
                     2, cv2.LINE_AA) 
         pyautogui.press('space')
+          
+   # print(jump_dist)    
         
-    print(jump_dist)
     cv2.imshow('screen', scr)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
