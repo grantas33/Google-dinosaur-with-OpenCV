@@ -28,6 +28,7 @@ should_crouch = False
 jumpdist = 175
 is_crouching = False
 MAX_SPEED_TIME = 118
+DINO_WALKING_HEIGHT = 110
 
 while(True):
     leftest = 1000     
@@ -68,7 +69,7 @@ while(True):
                     pyautogui.keyUp('down')
     
     if(leftest - dinoX < jumpdist - obstacle_height and should_crouch == False):            
-        if(dinoH > 110): 
+        if(dinoH > DINO_WALKING_HEIGHT): 
             cv2.putText(scr, 'Jump!', (0, 20), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0),
                      2, cv2.LINE_AA)
             pyautogui.press('space')
