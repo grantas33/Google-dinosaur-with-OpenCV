@@ -1,5 +1,5 @@
 A bot made to play a dinosaur game in Google Chrome's browser when offline. 
-Made using Python 3.6
+Made using Python 3.6.
 Grab screen function only works on Windows OS.
 
 ### How to use:
